@@ -1,5 +1,5 @@
 import React from 'react';
-const Footer = () => (
-    <span>Developed by WebHeroSchool</span>
+const Footer = ({count}) => (
+    <span>Left to do: {count}</span>
 );
 export default Footer;
