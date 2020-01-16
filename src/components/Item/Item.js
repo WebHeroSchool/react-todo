@@ -1,6 +1,6 @@
 import React from 'react';
-const Item = () => (
-    <span>Важное дело</span>
+const Item = ({deal}) => (
+    <span>{deal}</span>
 );
 
 export default Item;
