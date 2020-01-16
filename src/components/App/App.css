@@ -1,0 +1,7 @@
+.wrap {
+    margin: auto;
+    width: 350px;
+}
+.wrap__title {
+    font-family: Helvetica;
+}
