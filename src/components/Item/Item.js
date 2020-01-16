@@ -1,6 +1,6 @@
 import React from 'react';
-const Item = ({deal}) => (
-    <span>{deal}</span>
+const Item = ({value}) => (
+    <span>{value}</span>
 );
 
 export default Item;

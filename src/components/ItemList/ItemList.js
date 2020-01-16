@@ -1,10 +1,6 @@
 import React from 'react';
 import Item from '../Item/Item';
-const deals = ['Изучить материал по пропсам', 'Сделать задание по пропсам', 'Отправить задание на проверку'];
-const ItemList = () => (deals.map((deals) => (
-    <ul>
-        <li><Item deal={deals}/></li>
-    </ul>
-)));
-export {deals};
+const ItemList = ({items}) => (<ul>
+    {items.map((item) => (<li key={item.value}><Item value={item.value}/></li>))}
+</ul>);
 export default ItemList;
