@@ -1,6 +1,32 @@
 .item {
-    color: darkcyan;
+    color: #0f2929;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.item:hover {
+    color: #3f51b5;
 }
 .done {
     text-decoration: line-through;
+}
+.radio {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+}
+.radio:checked {
+    width: 18px;
+    height: 18px;
+    transform: rotate(45deg);
+    background: #D62B2E;
+    outline: none;
+    border: none;
+    margin-right: 5px;
+    top: 38px;
+    position: relative;
+}
+.radio_label {
+
 }
