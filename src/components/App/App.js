@@ -4,9 +4,18 @@ import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 import styles from './App.module.css';
 const items = [
-     {value: 'Изучить материал по пропсам'},
-     {value: 'Сделать задание по пропсам'},
-     {value: 'Отправить задание на проверку'}
+     {
+         value: 'Изучить материал по пропсам',
+        isDone: true
+     },
+     {
+         value: 'Сделать задание по пропсам',
+         isDone: false
+     },
+     {
+         value: 'Отправить задание на проверку',
+         isDone: false
+     }
 ];
 const App = () => (
     <div className={styles.wrap}>
