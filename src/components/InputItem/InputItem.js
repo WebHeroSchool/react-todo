@@ -1,5 +1,6 @@
 import React from 'react';
+import Input from '@material-ui/core/Input';
 const InputItem = () => (
-    <input placeholder={"What need to be done?"}></input>
+    <Input placeholder="Что нужно сделать?" inputProps={{ 'aria-label': 'description' }} />
 );
 export default InputItem;
