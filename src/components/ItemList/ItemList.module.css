@@ -1,6 +1,25 @@
+
 .item_list {
     list-style-type: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.button__delete:hover {
+    color: #3f51b5;
+    cursor: pointer;
+}
+.button__delete:active {
+    color: rgba(0, 0, 0, 0.54);
+    cursor: pointer;
+}
+@media screen and (max-width: 400px) {
+    .list {
+        padding: 0;
+    }
+}
+@media screen and (max-width: 360px) {
+    .item_list {
+        margin: 0;
+    }
 }

@@ -16,17 +16,3 @@
     appearance: none;
 
 }
-.radio:checked {
-    width: 18px;
-    height: 18px;
-    transform: rotate(45deg);
-    background: #D62B2E;
-    outline: none;
-    border: none;
-    margin-right: 5px;
-    top: 38px;
-    position: relative;
-}
-.radio_label {
-
-}
