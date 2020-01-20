@@ -16,7 +16,11 @@ const ItemList = ({items, onClickDone}) => (<ul className={styles.list}>
                 color="primary"
             />
         }
-        label={<Item value={item.value} isDone={item.isDone} onClickDone={onClickDone}/>}
+        label={<Item value={item.value}
+                     isDone={item.isDone}
+                     id={item.id}
+                     onClickDone={onClickDone}
+                />}
         />
         <Tooltip title="Удалить">
             <IconButton aria-label="delete" classes={{ label: [styles.button__delete] }}>
