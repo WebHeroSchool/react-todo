@@ -21,13 +21,14 @@ class App extends React.Component {
             }
         ]
     };
+    onClickDone = isDone => console.log(isDone);
     render() {
         return (
             <div className={styles.wrap}>
                 <img src={pin} className={styles.pin} alt="pin" />
                 <h1 className={styles.title}>Todos:</h1>
                 <InputItem/>
-                <ItemList items={this.state.items}/>
+                <ItemList items={this.state.items} onClickDone={this.onClickDone}/>
                 <Footer count={this.state.items.length}/>
             </div>);
     }
