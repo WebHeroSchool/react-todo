@@ -5,8 +5,8 @@ import Footer from '../Footer/Footer';
 import styles from './App.module.css';
 import pin from '../../img/pin.svg';
 class App extends React.Component {
-    render() {
-        const items = [
+    state = {
+        items: [
             {
                 value: 'Изучить материал по пропсам',
                 isDone: true
@@ -19,15 +19,17 @@ class App extends React.Component {
                 value: 'Отправить задание на проверку',
                 isDone: false
             }
-        ];
-    return (
-        <div className={styles.wrap}>
-            <img src={pin} className={styles.pin} alt="pin" />
-            <h1 className={styles.title}>Todos:</h1>
-            <InputItem/>
-            <ItemList items={items}/>
-            <Footer count={items.length}/>
-        </div>);
+        ]
+    };
+    render() {
+        return (
+            <div className={styles.wrap}>
+                <img src={pin} className={styles.pin} alt="pin" />
+                <h1 className={styles.title}>Todos:</h1>
+                <InputItem/>
+                <ItemList items={this.state.items}/>
+                <Footer count={this.state.items.length}/>
+            </div>);
     }
 };
 
