@@ -1,7 +1,37 @@
 .wrap {
     margin: auto;
-    width: 350px;
+    min-width: 320px;
+    max-width: 650px;
+    background: beige;
+    box-sizing: border-box;
+    padding: 65px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .title {
     font-family: Helvetica;
+    color: #3f51b5;
+    margin: 0 0 18px 0;
+}
+.pin {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    transform: rotate(-260deg);
+}
+@media screen and (max-width: 520px) {
+    .wrap {
+        padding: 45px 0;
+    }
+    .title {
+        margin: 0 auto 18px;
+    }
+    .pin {
+        width: 40px;
+        height: 40px;
+    }
 }

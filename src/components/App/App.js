@@ -3,6 +3,7 @@ import InputItem from '../InputItem/InputItem';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 import styles from './App.module.css';
+import pin from '../../img/pin.svg';
 const items = [
      {
          value: 'Изучить материал по пропсам',
@@ -19,7 +20,8 @@ const items = [
 ];
 const App = () => (
     <div className={styles.wrap}>
-        <h1 className={styles.title}>Todos</h1>
+        <img src={pin} className={styles.pin} alt="pin" />
+        <h1 className={styles.title}>Todos:</h1>
         <InputItem/>
         <ItemList items={items}/>
         <Footer count={items.length}/>

@@ -1,6 +1,18 @@
 .item {
-    color: darkcyan;
+    color: #0f2929;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.item:hover {
+    color: #3f51b5;
 }
 .done {
     text-decoration: line-through;
+}
+.radio {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
 }
