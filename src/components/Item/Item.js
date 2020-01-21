@@ -5,7 +5,7 @@ const Item = ({value, isDone, onClickDone}) => (
     <span className={classnames({
         [styles.item]:true,
         [styles.done]:isDone
-    })} onClick={() => onClickDone(isDone)}>
+    })}>
         {value}
     </span>
 );
