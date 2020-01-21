@@ -20,7 +20,7 @@
     height: 50px;
     position: absolute;
     top: 5px;
-    left: 16px;
+    left: 15px;
     transform: rotate(-260deg);
 }
 @media screen and (max-width: 520px) {
