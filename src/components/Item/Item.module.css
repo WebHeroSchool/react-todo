@@ -3,6 +3,11 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 .item:hover {
     color: #3f51b5;
