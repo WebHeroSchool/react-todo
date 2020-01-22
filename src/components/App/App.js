@@ -22,7 +22,8 @@ class App extends React.Component {
                 isDone: false,
                 id: 3
             }
-        ]
+        ],
+        count: 3
     };
     onClickDone = id => {
         const newItemList = this.state.items.map(item => {
@@ -34,16 +35,33 @@ class App extends React.Component {
         });
         this.setState({ items : newItemList});
     };
+    onClickDelete = id => {
+        const itemListDel = this.state.items.filter(item => item.id !== id);
+        this.setState({items : itemListDel});
+    };
+    onClickAdd = value => {
+            this.setState(state => ({
+                items : [
+                    ...state.items,
+                    {
+                        value,
+                        isDone: false,
+                        id: state.count + 1
+                    }
+                ],
+                count: state.count + 1
+            }))
+    };
     render() {
         return (
             <div className={styles.wrap}>
                 <img src={pin} className={styles.pin} alt="pin" />
                 <h1 className={styles.title}>Todos:</h1>
-                <InputItem/>
-                <ItemList items={this.state.items} onClickDone={this.onClickDone}/>
-                <Footer count={this.state.items.length}/>
+                <InputItem onClickAdd={this.onClickAdd}/>
+                <ItemList items={this.state.items} onClickDone={this.onClickDone} onClickDelete={this.onClickDelete}/>
+                <Footer count={this.state.count}/>
             </div>);
     }
-};
+}
 
 export default App;
