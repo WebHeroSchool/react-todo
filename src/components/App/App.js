@@ -34,16 +34,21 @@ class App extends React.Component {
         });
         this.setState({ items : newItemList});
     };
+
+    onClickDelete = id => {
+        const itemListDel = this.state.items.filter(item => item.id !== id);
+        this.setState({items : itemListDel});
+    };
     render() {
         return (
             <div className={styles.wrap}>
                 <img src={pin} className={styles.pin} alt="pin" />
                 <h1 className={styles.title}>Todos:</h1>
                 <InputItem/>
-                <ItemList items={this.state.items} onClickDone={this.onClickDone}/>
+                <ItemList items={this.state.items} onClickDone={this.onClickDone} onClickDelete={this.onClickDelete}/>
                 <Footer count={this.state.items.length}/>
             </div>);
     }
-};
+}
 
 export default App;
