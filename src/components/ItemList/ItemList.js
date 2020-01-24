@@ -9,18 +9,17 @@ import DeleteIcon from '@material-ui/icons/Delete';
 const ItemList = ({items, onClickDone, onClickDelete}) => (<ul className={styles.list}>
     {items.map((item) => (<li className={styles.item_list} key={item.id}>
         <FormControlLabel
-        control={
-            <Checkbox
-                checked={item.isDone}
-                value="checkedB"
-                color="primary"
-                onClick={() => onClickDone(item.id)}
-            />
-        }
+            control={
+                <Checkbox
+                    checked={item.isDone}
+                    value="checkedB"
+                    color="primary"
+                    onClick={() => onClickDone(item.id)}
+                />
+            }
         label={<Item value={item.value}
                      isDone={item.isDone}
                      id={item.id}
-                     isError={item.isError}
                 />}
         />
         <Tooltip title="Удалить">

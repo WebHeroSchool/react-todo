@@ -32,7 +32,10 @@ class InputItem extends React.Component {
                 inputProps={{ 'aria-label': 'description' }}
                 value={this.state.inputValue}
                 error={this.state.inputError}
-                onChange={event => this.setState({inputValue: event.target.value.toUpperCase()})}
+                onChange={event => this.setState({
+                    inputValue: event.target.value.toUpperCase(),
+                    inputError: false
+                })}
             />
             <Fab size="small"
                  color="primary"
