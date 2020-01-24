@@ -9,5 +9,9 @@ const Item = ({value, isDone}) => (
         {value}
     </span>
 );
-
+Item.defaultProps = {
+    value: 'Задача не найдена',
+    isDone: false,
+    id: 0
+};
 export default Item;
