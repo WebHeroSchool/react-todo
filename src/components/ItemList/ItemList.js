@@ -6,6 +6,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
+import PropTypes from "prop-types";
 const ItemList = ({items, onClickDone, onClickDelete}) => (<ul className={styles.list}>
     {items.map((item) => (<li className={styles.item_list} key={item.id}>
         <FormControlLabel
@@ -20,7 +21,6 @@ const ItemList = ({items, onClickDone, onClickDelete}) => (<ul className={styles
         label={<Item value={item.value}
                      isDone={item.isDone}
                      id={item.id}
-                     isError={item.isError}
                 />}
         />
         <Tooltip title="Удалить">
@@ -30,4 +30,9 @@ const ItemList = ({items, onClickDone, onClickDelete}) => (<ul className={styles
         </Tooltip>
     </li>))}
 </ul>);
+ItemList.propTypes = {
+    items: PropTypes.array,
+    onClickDone: PropTypes.func.isRequired,
+    onClickDelete: PropTypes.func.isRequired
+};
 export default ItemList;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './Footer.module.css';
 const Footer = ({count}) => (
     <span className={styles.footer}>Left to do: {count}</span>
@@ -6,4 +7,8 @@ const Footer = ({count}) => (
 Footer.defaultProps = {
     count: 0
 };
+Footer.propTypes = {
+    count: PropTypes.number.isRequired
+};
+
 export default Footer;
