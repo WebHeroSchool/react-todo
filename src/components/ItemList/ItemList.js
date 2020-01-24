@@ -20,6 +20,7 @@ const ItemList = ({items, onClickDone, onClickDelete}) => (<ul className={styles
         label={<Item value={item.value}
                      isDone={item.isDone}
                      id={item.id}
+                     isError={item.isError}
                 />}
         />
         <Tooltip title="Удалить">
