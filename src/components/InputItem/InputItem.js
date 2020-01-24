@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Input from '@material-ui/core/Input';
 import styles from './InputItem.module.css';
 import classnames from 'classnames';
@@ -49,9 +50,12 @@ class InputItem extends React.Component {
             })}>
                 <Alert severity="error"> Упс, кажется, вы забыли написать дело, которое хотите добавить</Alert>
             </div>
-
         </div>
     }
 }
-
+InputItem.propTypes = {
+    inputValue: PropTypes.string,
+    inputError: PropTypes.bool,
+    onClickAdd: PropTypes.func.isRequired
+};
 export default InputItem;
