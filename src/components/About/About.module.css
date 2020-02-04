@@ -1,4 +1,62 @@
-.title {
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
+    padding: 30px;
+    box-sizing: border-box;
+    background: beige;
+    border: 1px solid #3f51b5;
+    border-radius: 5px;
+}
+.user_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
     margin: 0 0 20px 0;
+}
+.info_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.name, .bio, .location {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 1.5;
+}
+.avatar {
+    width: 200px;
+    height: 200px;
+    margin: 0 15px 0 0;
+}
+.name, .bio, .location, .title {
+    margin: 0 0 5px 0;
+}
+.items {
+    list-style-type: none;
+}
+.item {
+    border: 1px solid #3f51b5;
+    border-radius: 7px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 0 0 10px 0;
+}
+.link {
+    color: black;
+    text-decoration: none;
+}
+.link:visited {
+    color: black;
+}
+.item:hover {
+    background: #3f51b5;
+}
+.item:hover .link {
+    color: #FFFFFF;
+}
+.item:active {
+    opacity: 0.4;
 }
