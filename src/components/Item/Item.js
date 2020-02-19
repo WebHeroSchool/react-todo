@@ -3,12 +3,6 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styles from './Item.module.css';
 class Item extends React.Component {
-    componentDidMount() {
-        this.timerID = setInterval(() => console.log(`interval${this.props.id}`), 1000);
-    }
-    componentWillUnmount() {
-        clearInterval(this.timerID);
-    }
     render() {
         const {value, isDone} = this.props;
         return(<span className={classnames({

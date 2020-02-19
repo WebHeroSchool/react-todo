@@ -1,39 +1,44 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import {BrowserRouter as Router, Route, NavLink} from 'react-router-dom';
 import Todo from '../Todo/Todo';
 import About from '../About/About';
-import Contacts from '../Contacts/Contacts';
-import Paper from '@material-ui/core/Paper';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+import Card from '@material-ui/core/Card';
 import styles from './App.module.css';
-const App = () => {
-    return (<Router>
-        <div className={styles.wrap}>
-            <Paper classes={{ root: [styles.paper] }}>
-                <Tabs
-                    indicatorColor="default"
-                    textColor="primary"
-                    centered
-                >
-                    <Link to='/' className={styles.link}>
-                        <Tab label="About" classes={{root: [styles.button]}}/>
-                    </Link>
-                    <Link to='/todo' className={styles.link}>
-                        <Tab label="Todos" classes={{root: [styles.button]}}/>
-                    </Link>
-                    <Link to='/contacts' className={styles.link}>
-                        <Tab label="Contacts" classes={{root: [styles.button]}}/>
-                    </Link>
-                </Tabs>
-            </Paper>
-            <Paper classes={{root: [styles.panel] }}>
-                <Route path='/' exact component={About} />
-                <Route path='/todo' component={Todo} />
-                <Route path='/contacts' component={Contacts} />
-            </Paper>
-        </div>
-    </Router>)
-};
+import logo from '../../img/WHS_black.svg';
+
+class App extends React.Component {
+    render() {
+        return (<Router>
+            <div className={styles.wrap}>
+                <Card className={styles.card}>
+                    <a className={styles.logo}
+                       href='https://webheroschool.ru/'
+                       target='_blank'
+                       rel='noopener noreferrer'>
+                        <img  alt='logo'
+                              src={logo}
+                              className={styles.logo__svg}
+                        />
+                    </a>
+                    <NavLink to='/about'
+                             className={styles.link}
+                             activeClassName={styles.link_active}>
+                        <button className={styles.button}>Обо мне</button>
+                    </NavLink>
+                    <NavLink to='/todo'
+                             className={styles.link}
+                             activeClassName={styles.link_active}>
+                       <button className={styles.button}>Дела</button>
+                    </NavLink>
+                </Card>
+                <div>
+                    <Route path='/about' exact component={About}/>
+                    <Route path='/todo' component={Todo}/>
+                    <Route path='/' exact component={About}/>
+                </div>
+            </div>
+        </Router>)
+    }
+}
 
 export default App;
