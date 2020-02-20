@@ -1,17 +1,55 @@
-
+.list {
+    padding-inline-start: 0;
+    margin: 0 0 43px 0;
+    min-height: 150px;
+    max-height: 350px;
+    overflow-y: scroll;
+}
 .item_list {
     list-style-type: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid #CCCCCC;
+    border-radius: 29px;
+    box-sizing: border-box;
+    margin: 0 0 8px 0;
+    padding: 0 10px 0 12px;
+}
+.item_list .button__delete {
+    fill: #CCCCCC;
+}
+.list .checkbox_icon {
+    color: #356EFF;
 }
 .button__delete:hover {
-    color: #3f51b5;
+    fill: #356EFF;
     cursor: pointer;
 }
 .button__delete:active {
-    color: rgba(0, 0, 0, 0.54);
+    fill: rgba(0, 0, 0, 0.54);
     cursor: pointer;
+}
+.noItems {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 125px 0 158px 0;
+    box-sizing: border-box;
+}
+.noItems__img {
+    margin: 0 0 24px 0;
+}
+.noItems__title {
+    font-size: 18px;
+    line-height: 21px;
+    margin: 0 0 8px 0;
+}
+.noItems__text {
+    font-size: 14px;
+    line-height: 16px;
+    color: #CCCCCC;
 }
 @media screen and (max-width: 400px) {
     .list {
@@ -20,6 +58,7 @@
 }
 @media screen and (max-width: 360px) {
     .item_list {
-        margin: 0;
+        margin: 0 0 10px 0;
+        padding: 0 7px 0;
     }
 }

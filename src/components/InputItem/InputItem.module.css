@@ -1,11 +1,25 @@
 .wrap {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
 }
 .input {
-    width: 80%;
+    border: 1px solid #CCCCCC;
+    box-shadow: none;
+    box-sizing: border-box;
+    border-radius: 29px;
+    padding: 12px;
+    width: 92%;
+    font-size: 14px;
+    line-height: 16px;
+    outline: none;
+}
+.wrap .add {
+    background: #356EFF;
+    color: #FFFFFF;
+    width: 36px;
+    height: 36px;
 }
 .error {
     display: none;

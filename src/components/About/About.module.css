@@ -5,58 +5,297 @@
     text-align: center;
     padding: 30px;
     box-sizing: border-box;
-    background: beige;
     border: 1px solid #3f51b5;
     border-radius: 5px;
-}
-.user_wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-    margin: 0 0 20px 0;
 }
 .info_wrap {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+.noUser_wrap {
+    padding: 14px 0 10px 12px;
+    box-sizing: border-box;
+    margin: 0 0 14px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
-.name, .bio, .location {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    font-weight: 500;
-    line-height: 1.5;
+.user_wrap {
+    display: flex;
+    align-items: center;
+    padding: 14px 0 10px 12px;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    margin: 0 0 14px 0;
+    position: relative;
+}
+.name {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 100%;
+    margin: 0 0 12px 0;
+}
+.bio {
+    margin: 0 0 14px 0;
+}
+.bio, .email, .phone {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 115%;
+    color: #999999;
+    text-decoration: none;
+}
+.contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.email, .phone {
+    display: flex;
+    margin: 0 0 9px 0;
+}
+.email__img, .phone__img {
+    margin: 0 4px 0 0;
+}
+.email:hover, .phone:hover {
+    color: #356EFF;
+}
+.email:active, .phone:active {
+    color: #CCCCCC;
+}
+.email:hover .email__img, .phone:hover .phone__img {
+    fill: #356EFF;
+}
+.email:active .email__img, .phone:active .phone__img {
+    fill: #CCCCCC;
 }
 .avatar {
-    width: 200px;
-    height: 200px;
-    margin: 0 15px 0 0;
+    width: 170px;
+    height: 176px;
+    margin: 0 39px 0 0;
+    border-radius: 9px;
 }
-.name, .bio, .location, .title {
-    margin: 0 0 5px 0;
+.connection {
+    position: absolute;
+    right: 12px;
+    bottom: 10px;
+}
+.gh {
+    margin: 0 8px 0 0;
+}
+.gh:hover .gh__img, .vk:hover .vk__img {
+    fill: #356EFF;
+}
+.gh:active .gh__img, .vk:active .vk__img {
+    fill: #CCCCCC;
+}
+.repo {
+    padding: 24px 32px;
+    box-sizing: border-box;
+    min-height: 400px;
+    max-height: 400px;
+}
+.title {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 100%;
+    align-self: flex-start;
+    margin: 0 0 15px 0;
 }
 .items {
+    min-height: 272px;
+    max-height: 272px;
     list-style-type: none;
+    padding-inline-start: 0;
+    margin-block-start: 0;
+}
+.items__error {
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .item {
-    border: 1px solid #3f51b5;
-    border-radius: 7px;
-    padding: 10px;
+    border: 1px solid #CCCCCC;
     box-sizing: border-box;
+    border-radius: 10px;
+    padding: 10px;
     margin: 0 0 10px 0;
+}
+.item:last-of-type {
+    margin: 0;
+}
+.item:hover {
+    border: 1px solid #356EFF;
+}
+.item:hover .link {
+    color: #356EFF;
 }
 .link {
     color: black;
     text-decoration: none;
+    margin: 0 0 4px 0;
 }
 .link:visited {
     color: black;
 }
-.item:hover {
-    background: #3f51b5;
-}
-.item:hover .link {
-    color: #FFFFFF;
-}
 .item:active {
     opacity: 0.4;
+}
+.errorText {
+    font-size: 18px;
+    line-height: 21px;
+}
+.tryAgain {
+    font-size: 14px;
+    line-height: 16px;
+    color: #999999;
+}
+.repo__info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.language {
+    position: relative;
+    padding-left: 22px;
+    margin: 0 16px 0 0;
+}
+.html:before, .css:before, .js:before {
+    content: '';
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.html:before {
+    background: #E00000;
+}
+.css:before {
+    background: #0094FF;
+}
+.js:before {
+    background: #FFC700;
+}
+.star {
+    position: relative;
+    padding-left: 22px;
+    font-size: 12px;
+    line-height: 0;
+    color: #999999;
+    margin: 0 18px 0 0;
+}
+.star:before {
+    content: url("../../img/Star.svg");
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    left: 2px;
+    bottom: -6px;
+}
+.fork {
+    position: relative;
+    padding-left: 22px;
+    font-size: 12px;
+    line-height: 14px;
+    color: #999999;
+    margin: 0 15px 0 0;
+}
+.fork:before {
+    content: url("../../img/Fork.svg");
+    height: 11px;
+    width: 15px;
+    position: absolute;
+    left: 2px;
+    bottom: 5px;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pagination__button {
+    width: 74px;
+    height: 32px;
+    border: 1px solid #999999;
+    box-sizing: border-box;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+    border-radius: 37px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #356EFF;
+    outline: none;
+}
+.pagination__button:first-of-type {
+    margin: 0 8px 0 0;
+}
+.noRepo_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pagination__button:hover {
+    border: 1px solid #356EFF;
+    color: #999999;
+}
+.pagination__button:active {
+    border: 1px solid #999999;
+    color: #356EFF;
+}
+@media screen and (max-width: 545px) {
+    .user_wrap {
+        padding: 10px;
+    }
+    .avatar {
+        width: 140px;
+        height: 146px;
+        margin: 0 25px 0 0;
+    }
+    .gh__img, .vk__img {
+        width: 19px;
+        height: 19px;
+    }
+    .name {
+        font-size: 16px;
+        margin: 0 0 7px 0;
+    }
+    .bio {
+        margin: 0 0 7px 0;
+    }
+    .repo {
+        min-height: 480px;
+        max-height: 480px;
+    }
+    .repo__info {
+        flex-wrap: wrap;
+    }
+    .items {
+        min-height: 348px;
+        max-height: 348px;
+    }
+}
+@media screen and (max-width: 380px) {
+    .user_wrap {
+        align-items: flex-start;
+    }
+    /*.email, .phone {*/
+    /*    margin: 0 0 5px 0;*/
+    /*}*/
+}
+@media screen and (max-width: 350px) {
+    .avatar {
+        width: 120px;
+        height: 126px;
+    }
 }

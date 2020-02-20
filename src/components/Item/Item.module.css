@@ -10,14 +10,20 @@
     user-select: none;
 }
 .item:hover {
-    color: #3f51b5;
+    color: #356EFF;
+}
+.item:active {
+    color: #CCCCCC;
 }
 .done {
     text-decoration: line-through;
+    color: #CCCCCC;
+}
+.done:hover {
+    color: #CCCCCC;
 }
 .radio {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-
 }
