@@ -28,7 +28,8 @@ class Todo extends React.Component {
     }
 
     state = {
-        items: JSON.parse(localStorage.getItem('items')),
+        items: JSON.parse(localStorage.getItem('items') ||
+        '[]'),
         count: 3,
         open: false,
         filterItems: 'all'
