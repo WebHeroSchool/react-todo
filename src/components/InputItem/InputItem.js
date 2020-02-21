@@ -27,22 +27,24 @@ class InputItem extends React.Component {
     render() {
         const {onClickAdd} = this.props;
         return <div className={styles.wrap}>
-            <input
-                placeholder='Что нужно сделать?'
-                className={styles.input}
-                value={this.state.inputValue}
-                error={this.state.inputError}
-                onChange={event => this.setState({
-                    inputValue: event.target.value,
-                    inputError: false
-                })}
-            />
-            <Fab size='small'
-                 aria-label='add'
-                 className={styles.add}
-                 onClick={this.onClickButton}>
-                <AddIcon/>
-            </Fab>
+            <div className={styles.input_wrap}>
+                <input
+                    placeholder='Что нужно сделать?'
+                    className={styles.input}
+                    value={this.state.inputValue}
+                    error={this.state.inputError}
+                    onChange={event => this.setState({
+                        inputValue: event.target.value,
+                        inputError: false
+                    })}
+                />
+                <Fab size='small'
+                     aria-label='add'
+                     className={styles.add}
+                     onClick={this.onClickButton}>
+                    <AddIcon/>
+                </Fab>
+            </div>
             <div className={classnames({
                 [styles.error]: true,
                 [styles.error_true]: this.state.inputError

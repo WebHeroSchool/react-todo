@@ -131,13 +131,10 @@
     padding: 10px;
     margin: 0 0 10px 0;
 }
-.item:last-of-type {
-    margin: 0;
-}
 .item:hover {
     border: 1px solid #356EFF;
 }
-.item:hover .link {
+.link:hover .repo__name {
     color: #356EFF;
 }
 .link {
@@ -289,9 +286,6 @@
     .user_wrap {
         align-items: flex-start;
     }
-    /*.email, .phone {*/
-    /*    margin: 0 0 5px 0;*/
-    /*}*/
 }
 @media screen and (max-width: 350px) {
     .avatar {

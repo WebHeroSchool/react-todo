@@ -1,5 +1,10 @@
 .wrap {
     display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+.input_wrap {
+    display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
     align-items: center;
@@ -15,7 +20,7 @@
     line-height: 16px;
     outline: none;
 }
-.wrap .add {
+.input_wrap .add {
     background: #356EFF;
     color: #FFFFFF;
     width: 36px;

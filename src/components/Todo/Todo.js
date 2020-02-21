@@ -28,23 +28,7 @@ class Todo extends React.Component {
     }
 
     state = {
-        items: [
-            {
-                value: 'Изучить материал по пропсам',
-                isDone: false,
-                id: 1
-            },
-            {
-                value: 'Сделать задание по пропсам',
-                isDone: false,
-                id: 2
-            },
-            {
-                value: 'Отправить задание на проверку',
-                isDone: false,
-                id: 3
-            }
-        ],
+        items: JSON.parse(localStorage.getItem('items')),
         count: 3,
         open: false,
         filterItems: 'all'
@@ -102,9 +86,11 @@ class Todo extends React.Component {
 
     componentDidMount() {
         this.buttonAll.current.focus();
-    }
+    };
 
     render() {
+        let itemsStorage = JSON.stringify(this.state.items);
+        localStorage.setItem('items', itemsStorage);
         const allItems = this.state.items;
         const itemsDone = this.state.items.filter(item => item.isDone === true);
         const itemsUndone = this.state.items.filter(item => item.isDone === false);
