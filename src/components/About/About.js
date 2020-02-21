@@ -240,7 +240,7 @@ class About extends React.Component {
                                                         </button>
                                                         <button className={styles.pagination__button}
                                                                 onClick={this.nextPage}
-                                                                disabled={repoList.length < lastRepo}
+                                                                disabled={repoList.length <= lastRepo}
                                                         >
                                                             Вперед
                                                         </button>
