@@ -41,11 +41,6 @@ class InputItem extends React.Component {
                 this.setState({
                     open: true
                 });
-                setTimeout(() => {
-                    this.setState({
-                        open: false
-                    })
-                }, 1500)
             }
         } else {
             this.setState({
@@ -72,7 +67,8 @@ class InputItem extends React.Component {
                         error={this.state.inputError}
                         onChange={event => this.setState({
                             inputValue: event.target.value,
-                            inputError: false
+                            inputError: false,
+                            open: false
                         })}
                     />
                     <Fab size='small'
