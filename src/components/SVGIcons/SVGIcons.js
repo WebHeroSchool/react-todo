@@ -10,7 +10,7 @@ export class SVGIcons extends React.Component {
             className = '',
             height = '16'
         } = this.props;
-        const getViewBox = name => {
+        const getViewBox = (name) => {
             switch (name) {
                 case 'email':
                     return '0 0 16 16';
