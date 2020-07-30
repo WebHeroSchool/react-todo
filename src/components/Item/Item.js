@@ -16,7 +16,7 @@ class Item extends React.Component {
 Item.defaultProps = {
     value: 'Задача не найдена',
     isDone: false,
-    id: 0
+    id: 1
 };
 Item.propTypes = {
     value: PropTypes.string.isRequired,

@@ -3,23 +3,6 @@ import InputItem from '../InputItem/InputItem';
 import ItemList from '../ItemList/ItemList';
 import styles from './Todo.module.css';
 import Card from '@material-ui/core/Card';
-import Tooltip from '@material-ui/core/Tooltip';
-import withStyles from '@material-ui/core/styles/withStyles';
-
-const StyledTooltip = withStyles({
-    tooltip: {
-        backgroundColor: '#356EFF',
-        color: '#FFFFFF',
-        boxShadow: 'none',
-        fontStyle: 'normal',
-        fontWeight: 'normal',
-        fontSize: '14px',
-        lineHeight: '16px',
-    },
-    arrow: {
-        color: '#356EFF',
-    }
-})(Tooltip);
 
 class Todo extends React.Component {
     constructor(props) {
@@ -28,24 +11,9 @@ class Todo extends React.Component {
     }
 
     state = {
-        items: [
-            {
-                value: 'Изучить материал по пропсам',
-                isDone: false,
-                id: 1
-            },
-            {
-                value: 'Сделать задание по пропсам',
-                isDone: false,
-                id: 2
-            },
-            {
-                value: 'Отправить задание на проверку',
-                isDone: false,
-                id: 3
-            }
-        ],
-        count: 3,
+        items: JSON.parse(localStorage.getItem('items') ||
+            '[]'),
+        count: 0,
         open: false,
         filterItems: 'all'
     };
@@ -64,27 +32,17 @@ class Todo extends React.Component {
         this.setState({items: itemListDel});
     };
     onClickAdd = (value) => {
-        const itemListFind = this.state.items.find(item => item.value.toLowerCase() === value.toLowerCase());
-        if (!itemListFind) {
-            this.setState(state => ({
-                items: [
-                    ...state.items,
-                    {
-                        value,
-                        isDone: false,
-                        id: state.count + 1
-                    }
-                ],
-                count: state.count + 1
-            }));
-            this.setState({
-                inputValue: ''
-            });
-        } else {
-            this.setState({
-                open: true
-            });
-        }
+        this.setState(state => ({
+            items: [
+                ...state.items,
+                {
+                    value,
+                    isDone: false,
+                    id: state.count + 1
+                }
+            ],
+            count: state.count + 1
+        }));
     };
     selectAll = () => {
         this.setState({
@@ -102,9 +60,11 @@ class Todo extends React.Component {
 
     componentDidMount() {
         this.buttonAll.current.focus();
-    }
+    };
 
     render() {
+        let itemsStorage = JSON.stringify(this.state.items);
+        localStorage.setItem('items', itemsStorage);
         const allItems = this.state.items;
         const itemsDone = this.state.items.filter(item => item.isDone === true);
         const itemsUndone = this.state.items.filter(item => item.isDone === false);
@@ -141,15 +101,7 @@ class Todo extends React.Component {
                     </div>
                     <div className={styles.todoList}>
                         <ItemList items={items} onClickDone={this.onClickDone} onClickDelete={this.onClickDelete}/>
-                        <StyledTooltip title='Такая задача уже есть в вашем списке. Введите другое название'
-                                       arrow
-                                       disableFocusListener
-                                       disableHoverListener
-                                       disableTouchListener
-                                       open={this.state.open}
-                        >
-                            <InputItem onClickAdd={this.onClickAdd}/>
-                        </StyledTooltip>
+                        <InputItem onClickAdd={this.onClickAdd} items={items}/>
                     </div>
                 </section>
             </Card>);
